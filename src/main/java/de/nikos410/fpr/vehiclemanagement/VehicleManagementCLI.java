@@ -144,7 +144,7 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     private void addCargoBicycle(long id, String modelNumber, BigDecimal maximumSpeed) {
-        final var cargoVolume = new BigDecimal(readLine("Enter cargo volume in cubic metres (m^3)"));
+        final var cargoVolume = new BigDecimal(readLine("Enter cargo volume in cubic metres (m^3)."));
 
         final CargoBicycle cargoBicycle = new CargoBicycle(id, modelNumber, maximumSpeed, cargoVolume);
         vehicleRepository.add(cargoBicycle);
