@@ -34,7 +34,7 @@ public class VehicleManagementCLI implements AutoCloseable {
         boolean run;
         do {
             System.out.println("Please tell me what you want to do.");
-            System.out.println("exit | list | add | remove");
+            System.out.println("exit | list | find-by-id | find-by-model-number | add | remove");
             final String input = readLine();
             run = tryHandleCommand(input);
         } while (run);
