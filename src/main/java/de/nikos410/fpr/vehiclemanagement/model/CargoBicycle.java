@@ -1,6 +1,7 @@
 package de.nikos410.fpr.vehiclemanagement.model;
 
 import java.math.BigDecimal;
+import java.text.MessageFormat;
 
 /**
  * A cargo bicycle.
@@ -24,5 +25,14 @@ public class CargoBicycle extends Vehicle {
      */
     public void setCargoVolume(BigDecimal cargoVolume) {
         this.cargoVolume = cargoVolume;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("CargoBicycle{\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\ncargoVolume={3}\n}",
+                getId(),
+                getModelNumber(),
+                getMaximumSpeed(),
+                getCargoVolume());
     }
 }

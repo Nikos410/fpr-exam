@@ -1,5 +1,7 @@
 package de.nikos410.fpr.vehiclemanagement.model;
 
+import java.text.MessageFormat;
+
 /**
  * A passenger car.
  */
@@ -22,5 +24,14 @@ public class PassengerCar extends Vehicle {
      */
     public void setNumberOfSeats(int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("ElectricPassengerCar{\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\nnumberOfSeets={3}\n}",
+                getId(),
+                getModelNumber(),
+                getMaximumSpeed(),
+                getNumberOfSeats());
     }
 }

@@ -27,6 +27,14 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     }
 
     /**
+     * All concrete entities must override this and should include all their properties.
+     *
+     * @return a string representation of this entity.
+     */
+    @Override
+    public abstract String toString();
+
+    /**
      * Concrete entities should override this by comparing their id. This is not done here because this class can
      * be used as the base for many different things. For example, a person and a vehicle with the id 42 should not
      * be equal.
