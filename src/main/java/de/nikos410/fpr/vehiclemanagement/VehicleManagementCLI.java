@@ -147,8 +147,12 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     private void remove() {
-        final String input = readLine("Enter id of vehicle to remove.");
-        remove(input);
+        final String input = readLine("Enter id of vehicle to remove or cancel to return to main menu.");
+        if (input.equalsIgnoreCase("cancel")) {
+            return;
+        } else {
+            remove(input);
+        }
     }
 
     private void remove(String vehicleIdInput) {
