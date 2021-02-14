@@ -1,13 +1,13 @@
 package de.nikos410.fpr.vehiclemanagement;
 
-import de.nikos410.fpr.vehiclemanagement.model.BaseEntity;
-import de.nikos410.fpr.vehiclemanagement.model.Vehicle;
+import de.nikos410.fpr.vehiclemanagement.model.*;
 import de.nikos410.fpr.vehiclemanagement.model.repository.InMemoryVehicleRepository;
 import de.nikos410.fpr.vehiclemanagement.model.repository.VehicleRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,7 +49,7 @@ public class VehicleManagementCLI implements AutoCloseable {
                 return false;
             }
             case "list" -> list();
-            case "add" -> add();
+            case "add" -> tryAdd();
             case "remove" -> remove();
             default -> System.err.println("Unknown command. Please try again.");
         }
@@ -61,7 +61,8 @@ public class VehicleManagementCLI implements AutoCloseable {
         final String input = readLine("What should the vehicles be ordered by? [id | max-speed | cancel]");
 
         switch (input) {
-            case "cancel" -> {}
+            case "cancel" -> {
+            }
             case "id" -> listOrderedById();
             case "max-speed" -> listOrderedByMaxSpeed();
             default -> {
@@ -96,8 +97,53 @@ public class VehicleManagementCLI implements AutoCloseable {
                 .collect(Collectors.joining(",\n")));
     }
 
+    private void tryAdd() {
+        try {
+            add();
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid number entered.");
+        }
+    }
+
     private void add() {
-        // TODO
+        final var id = Long.parseLong(readLine("Enter id."));
+        final var modelNumber = readLine("Enter model number.");
+        final var maximumSpeed = new BigDecimal(readLine("Enter maximum speed in kilometres per hour (km/h)."));
+
+        final var type = readLine("What type of vehicle do you want to add? [passenger-car | cargo-bike | cancel]");
+
+        switch (type) {
+            case "cancel" -> {
+            }
+            case "passenger-car" -> addPassengerCar(id, modelNumber, maximumSpeed);
+            case "cargo-bike" -> addCargoBicycle(id, modelNumber, maximumSpeed);
+            default -> {
+                System.err.println("Unknown vehicle type. Please try again.");
+                add();
+            }
+        }
+    }
+
+    private void addPassengerCar(long id, String modelNumber, BigDecimal maximumSpeed) {
+        final var numberOfSeats = Integer.parseInt(readLine("Enter number of seats."));
+
+        final var input = readLine("Is this vehicle an electric vehicle? [y|j|n]");
+        final PassengerCar passengerCar;
+        if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("j")) {
+            final var maximumRange = new BigDecimal(readLine("Enter maximum range in kilometres (km)"));
+            passengerCar = new ElectricPassengerCar(id, modelNumber, maximumSpeed, numberOfSeats, maximumRange);
+        } else {
+            passengerCar = new PassengerCar(id, modelNumber, maximumSpeed, numberOfSeats);
+        }
+
+        vehicleRepository.add(passengerCar);
+    }
+
+    private void addCargoBicycle(long id, String modelNumber, BigDecimal maximumSpeed) {
+        final var cargoVolume = new BigDecimal(readLine("Enter cargo volume in kilometres per hour (km/h)"));
+
+        final CargoBicycle cargoBicycle = new CargoBicycle(id, modelNumber, maximumSpeed, cargoVolume);
+        vehicleRepository.add(cargoBicycle);
     }
 
     private void remove() {
