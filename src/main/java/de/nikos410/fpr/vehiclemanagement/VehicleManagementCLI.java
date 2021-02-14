@@ -7,12 +7,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class VehicleManagementCLI {
+public class VehicleManagementCLI implements AutoCloseable {
     private final BufferedReader bufferedStdInReader = new BufferedReader(new InputStreamReader(System.in));
     private final VehicleRepository vehicleRepository = new InMemoryVehicleRepository();
 
-    public static void main(String[] args) {
-        new VehicleManagementCLI().run();
+    public static void main(String[] args) throws IOException {
+        try (final VehicleManagementCLI vehicleManagementCLI = new VehicleManagementCLI()){
+            vehicleManagementCLI.run();
+        }
     }
 
     public void run() {
@@ -92,5 +94,10 @@ public class VehicleManagementCLI {
         } catch (IOException e) {
             throw new IllegalStateException("Could not read input. Please try again.", e);
         }
+    }
+
+    @Override
+    public void close() throws IOException {
+        bufferedStdInReader.close();
     }
 }
