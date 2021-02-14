@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.text.MessageFormat;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -55,6 +57,7 @@ public class VehicleManagementCLI implements AutoCloseable {
                 return false;
             }
             case "list" -> list();
+            case "find-by-id" -> findById();
             case "add" -> tryAdd();
             case "remove" -> remove();
             default -> System.err.println("Unknown command. Please try again.");
@@ -94,6 +97,19 @@ public class VehicleManagementCLI implements AutoCloseable {
                 .sorted(Comparator.comparing(Vehicle::getMaximumSpeed))
                 .collect(Collectors.toList());
         list(vehiclesOrderedByMaxSpeed);
+    }
+
+    private void findById() {
+        try {
+            final long id = Long.parseLong(readLine("Enter id."));
+            final Vehicle vehicle = vehicleRepository
+                    .findOneById(id)
+                    .orElseThrow(() -> new IllegalArgumentException(MessageFormat.format("Vehicle with id {0} not found.", id)));
+            System.out.println(vehicle);
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid id. Please try again.");
+            findById();
+        }
     }
 
     private void list(List<Vehicle> vehicles) {
