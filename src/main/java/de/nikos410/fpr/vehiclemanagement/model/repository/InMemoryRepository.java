@@ -44,7 +44,7 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
      */
     @Override
     public void update(T updatedEntity) {
-        // No-Op
+        // No-Op for this repository type, since no data is persisted.
     }
 
     @Override
