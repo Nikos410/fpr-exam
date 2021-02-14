@@ -58,6 +58,7 @@ public class VehicleManagementCLI implements AutoCloseable {
             }
             case "list" -> list();
             case "find-by-id" -> findById();
+            case "find-by-model-number" -> findByModelNumber();
             case "add" -> tryAdd();
             case "remove" -> remove();
             default -> System.err.println("Unknown command. Please try again.");
@@ -112,7 +113,13 @@ public class VehicleManagementCLI implements AutoCloseable {
         }
     }
 
-    private void list(List<Vehicle> vehicles) {
+    private void findByModelNumber() {
+        final String modelNumber = readLine("Enter model number.");
+        final Collection<Vehicle> vehicles = vehicleRepository.findAllByModelNumber(modelNumber);
+        list(vehicles);
+    }
+
+    private void list(Collection<Vehicle> vehicles) {
         System.out.println(vehicles
                 .stream()
                 .map(BaseEntity::toString)
