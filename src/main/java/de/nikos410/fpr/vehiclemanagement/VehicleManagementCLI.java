@@ -12,7 +12,7 @@ public class VehicleManagementCLI implements AutoCloseable {
     private final VehicleRepository vehicleRepository = new InMemoryVehicleRepository();
 
     public static void main(String[] args) throws IOException {
-        try (final VehicleManagementCLI vehicleManagementCLI = new VehicleManagementCLI()){
+        try (final var vehicleManagementCLI = new VehicleManagementCLI()){
             vehicleManagementCLI.run();
         }
     }
