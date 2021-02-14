@@ -12,6 +12,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * A basic command-line-interface (CLI) for managing different kinds of vehicles.
+ */
 public class VehicleManagementCLI implements AutoCloseable {
     private final BufferedReader bufferedStdInReader = new BufferedReader(new InputStreamReader(System.in));
     private final VehicleRepository vehicleRepository = new InMemoryVehicleRepository();
@@ -22,6 +25,9 @@ public class VehicleManagementCLI implements AutoCloseable {
         }
     }
 
+    /**
+     * Start the CLI.
+     */
     public void run() {
         boolean run;
         do {
