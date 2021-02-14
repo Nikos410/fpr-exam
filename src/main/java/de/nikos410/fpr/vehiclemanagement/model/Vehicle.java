@@ -1,11 +1,13 @@
 package de.nikos410.fpr.vehiclemanagement.model;
 
+import java.math.BigDecimal;
+
 /**
  * The base entity which all concrete vehicles should be based on.
  */
 public abstract class Vehicle extends BaseEntity {
     private String modelNumber;
-    private String maximumSpeed;
+    private BigDecimal maximumSpeed;
 
     /**
      * Returns the model number of this vehicle.
@@ -26,19 +28,20 @@ public abstract class Vehicle extends BaseEntity {
     }
 
     /**
-     * Returns the maximum speed of this vehicle.
-     * @return the maximum speed of this vehicle.
+     * Returns the maximum speed of this vehicle in kilometres per hour (km/h).
+     *
+     * @return the maximum speed of this vehicle in kilometres per hour (km/h).
      */
-    public String getMaximumSpeed() {
+    public BigDecimal getMaximumSpeed() {
         return maximumSpeed;
     }
 
     /**
-     * Set the maximum speed of this vehicle.
+     * Set the maximum speed of this vehicle in kilometres per hour (km/h).
      *
-     * @param maximumSpeed the maximum speed of this vehicle.
+     * @param maximumSpeed the maximum speed of this vehicle in kilometres per hour (km/h).
      */
-    public void setMaximumSpeed(String maximumSpeed) {
+    public void setMaximumSpeed(BigDecimal maximumSpeed) {
         this.maximumSpeed = maximumSpeed;
     }
 
