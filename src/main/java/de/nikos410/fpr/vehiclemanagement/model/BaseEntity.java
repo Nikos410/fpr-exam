@@ -8,6 +8,10 @@ package de.nikos410.fpr.vehiclemanagement.model;
 public abstract class BaseEntity implements Comparable<BaseEntity> {
     private long id;
 
+    protected BaseEntity(long id) {
+        this.id = id;
+    }
+
     /**
      * Return the id that identifies this entity.
      *

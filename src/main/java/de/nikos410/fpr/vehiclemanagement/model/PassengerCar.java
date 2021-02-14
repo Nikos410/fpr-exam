@@ -1,5 +1,6 @@
 package de.nikos410.fpr.vehiclemanagement.model;
 
+import java.math.BigDecimal;
 import java.text.MessageFormat;
 
 /**
@@ -7,6 +8,11 @@ import java.text.MessageFormat;
  */
 public class PassengerCar extends Vehicle {
     private int numberOfSeats;
+
+    public PassengerCar(long id, String modelNumber, BigDecimal maximumSpeed, int numberOfSeats) {
+        super(id, modelNumber, maximumSpeed);
+        this.numberOfSeats = numberOfSeats;
+    }
 
     /**
      * Returns the number of seats of this vehicle.

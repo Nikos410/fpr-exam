@@ -9,6 +9,11 @@ import java.text.MessageFormat;
 public class CargoBicycle extends Vehicle {
     private BigDecimal cargoVolume;
 
+    public CargoBicycle(long id, String modelNumber, BigDecimal maximumSpeed, BigDecimal cargoVolume) {
+        super(id, modelNumber, maximumSpeed);
+        this.cargoVolume = cargoVolume;
+    }
+
     /**
      * Returns the cargo volume of this bike in cubic metres (m^3).
      *

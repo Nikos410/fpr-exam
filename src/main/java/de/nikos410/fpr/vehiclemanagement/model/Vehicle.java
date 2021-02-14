@@ -9,6 +9,12 @@ public abstract class Vehicle extends BaseEntity {
     private String modelNumber;
     private BigDecimal maximumSpeed;
 
+    protected Vehicle(long id, String modelNumber, BigDecimal maximumSpeed) {
+        super(id);
+        this.modelNumber = modelNumber;
+        this.maximumSpeed = maximumSpeed;
+    }
+
     /**
      * Returns the model number of this vehicle.
      *

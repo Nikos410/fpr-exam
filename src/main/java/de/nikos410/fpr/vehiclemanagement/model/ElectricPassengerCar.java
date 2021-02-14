@@ -9,19 +9,24 @@ import java.text.MessageFormat;
 public class ElectricPassengerCar extends PassengerCar {
     private BigDecimal maximumRange;
 
+    public ElectricPassengerCar(long id, String modelNumber, BigDecimal maximumSpeed, int numberOfSeats, BigDecimal maximumRange) {
+        super(id, modelNumber, maximumSpeed, numberOfSeats);
+        this.maximumRange = maximumRange;
+    }
+
     /**
-     * Returns the maximum range of this car.
+     * Returns the maximum range of this car in kilometres (km).
      *
-     * @return the maximum range of this car.
+     * @return the maximum range of this car in kilometres (km).
      */
     public BigDecimal getMaximumRange() {
         return maximumRange;
     }
 
     /**
-     * Sets the maximum range of this car.
+     * Sets the maximum range of this car in kilometres (km).
      *
-     * @param maximumRange the maximum range of this car.
+     * @param maximumRange the maximum range of this car in kilometres (km).
      */
     public void setMaximumRange(BigDecimal maximumRange) {
         this.maximumRange = maximumRange;
