@@ -194,7 +194,7 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     private void remove(long vehicleId) {
-        vehicleRepository.delete(vehicleId);
+        vehicleRepository.remove(vehicleId);
         System.out.println("Successfully removed vehicle.");
     }
 

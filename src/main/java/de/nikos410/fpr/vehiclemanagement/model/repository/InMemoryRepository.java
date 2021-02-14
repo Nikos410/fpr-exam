@@ -48,7 +48,7 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
     }
 
     @Override
-    public void delete(long id) {
+    public void remove(long id) {
         final T toDelete = findOneById(id).orElseThrow(() -> new IllegalArgumentException(MessageFormat.format("Element with id {0} is not present.", id)));
         content.remove(toDelete);
     }
