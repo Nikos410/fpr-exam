@@ -1,18 +1,20 @@
 package de.nikos410.fpr.vehiclemanagement;
 
+import de.nikos410.fpr.vehiclemanagement.model.BaseEntity;
 import de.nikos410.fpr.vehiclemanagement.model.repository.InMemoryVehicleRepository;
 import de.nikos410.fpr.vehiclemanagement.model.repository.VehicleRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 
 public class VehicleManagementCLI implements AutoCloseable {
     private final BufferedReader bufferedStdInReader = new BufferedReader(new InputStreamReader(System.in));
     private final VehicleRepository vehicleRepository = new InMemoryVehicleRepository();
 
     public static void main(String[] args) throws IOException {
-        try (final var vehicleManagementCLI = new VehicleManagementCLI()){
+        try (final var vehicleManagementCLI = new VehicleManagementCLI()) {
             vehicleManagementCLI.run();
         }
     }
@@ -54,7 +56,11 @@ public class VehicleManagementCLI implements AutoCloseable {
 
     private void list() {
         // TODO: allow specifying order
-        System.out.println(vehicleRepository.findAll());
+        System.out.println(vehicleRepository
+                .findAll()
+                .stream()
+                .map(BaseEntity::toString)
+                .collect(Collectors.joining(",\n")));
     }
 
     private void add() {
@@ -79,6 +85,7 @@ public class VehicleManagementCLI implements AutoCloseable {
     private void remove(long staffId) {
         vehicleRepository.delete(staffId);
     }
+
     private String readLine() {
         return readLine("");
     }
