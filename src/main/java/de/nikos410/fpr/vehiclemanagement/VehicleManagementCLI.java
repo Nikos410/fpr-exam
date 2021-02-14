@@ -120,6 +120,7 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     private void list(Collection<Vehicle> vehicles) {
+        System.out.println(MessageFormat.format("Found {0} vehicles.", vehicles.size()));
         System.out.println(vehicles
                 .stream()
                 .map(BaseEntity::toString)
