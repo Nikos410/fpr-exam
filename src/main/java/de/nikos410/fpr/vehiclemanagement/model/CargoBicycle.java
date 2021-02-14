@@ -34,7 +34,7 @@ public class CargoBicycle extends Vehicle {
 
     @Override
     public String toString() {
-        return MessageFormat.format("CargoBicycle{\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\ncargoVolume={3}\n}",
+        return MessageFormat.format("CargoBicycle'{'\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\ncargoVolume={3}\n}",
                 getId(),
                 getModelNumber(),
                 getMaximumSpeed(),
