@@ -1,12 +1,27 @@
 package de.nikos410.fpr.vehiclemanagement.model;
 
+/**
+ * A basic class which describes an entity that is identified by an id.
+ *
+ * Other entities should be based on this class.
+ */
 public abstract class BaseEntity {
     private long id;
 
+    /**
+     * Return the id that identifies this entity.
+     *
+     * @return the id that identifies this entity.
+     */
     public long getId() {
         return id;
     }
 
+    /**
+     * Set the id that identifies this entity.
+     *
+     * @param id the id that identifies this entity.
+     */
     public void setId(long id) {
         this.id = id;
     }
