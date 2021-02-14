@@ -1,4 +1,4 @@
-package de.nikos410.fpr.vehiclemanagement.model.repository;
+package de.nikos410.fpr.vehiclemanagement.repository;
 
 import de.nikos410.fpr.vehiclemanagement.model.Vehicle;
 

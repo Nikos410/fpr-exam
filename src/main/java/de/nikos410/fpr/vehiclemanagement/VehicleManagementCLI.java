@@ -1,8 +1,8 @@
 package de.nikos410.fpr.vehiclemanagement;
 
 import de.nikos410.fpr.vehiclemanagement.model.*;
-import de.nikos410.fpr.vehiclemanagement.model.repository.InMemoryVehicleRepository;
-import de.nikos410.fpr.vehiclemanagement.model.repository.VehicleRepository;
+import de.nikos410.fpr.vehiclemanagement.repository.InMemoryVehicleRepository;
+import de.nikos410.fpr.vehiclemanagement.repository.VehicleRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
