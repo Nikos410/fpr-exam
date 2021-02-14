@@ -1,12 +1,15 @@
 package de.nikos410.fpr.vehiclemanagement;
 
 import de.nikos410.fpr.vehiclemanagement.model.BaseEntity;
+import de.nikos410.fpr.vehiclemanagement.model.Vehicle;
 import de.nikos410.fpr.vehiclemanagement.model.repository.InMemoryVehicleRepository;
 import de.nikos410.fpr.vehiclemanagement.model.repository.VehicleRepository;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class VehicleManagementCLI implements AutoCloseable {
@@ -55,9 +58,38 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     private void list() {
-        // TODO: allow specifying order
-        System.out.println(vehicleRepository
+        final String input = readLine("What should the vehicles be ordered by? [id | max-speed]");
+
+        switch (input) {
+            case "id" -> listOrderedById();
+            case "max-speed" -> listOrderedByMaxSpeed();
+            default -> {
+                System.err.println("Unknown ordering. Please try again.");
+                list();
+            }
+        }
+    }
+
+    private void listOrderedById() {
+        final List<Vehicle> vehiclesOrderedById = vehicleRepository
                 .findAll()
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
+        list(vehiclesOrderedById);
+    }
+
+    private void listOrderedByMaxSpeed() {
+        final List<Vehicle> vehiclesOrderedByMaxSpeed = vehicleRepository
+                .findAll()
+                .stream()
+                .sorted(Comparator.comparing(Vehicle::getMaximumSpeed))
+                .collect(Collectors.toList());
+        list(vehiclesOrderedByMaxSpeed);
+    }
+
+    private void list(List<Vehicle> vehicles) {
+        System.out.println(vehicles
                 .stream()
                 .map(BaseEntity::toString)
                 .collect(Collectors.joining(",\n")));
