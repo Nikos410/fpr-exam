@@ -34,7 +34,7 @@ public class PassengerCar extends Vehicle {
 
     @Override
     public String toString() {
-        return MessageFormat.format("ElectricPassengerCar{\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\nnumberOfSeets={3}\n}",
+        return MessageFormat.format("ElectricPassengerCar{\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\nnumberOfSeats={3}\n}",
                 getId(),
                 getModelNumber(),
                 getMaximumSpeed(),
