@@ -151,18 +151,18 @@ public class VehicleManagementCLI implements AutoCloseable {
         remove(input);
     }
 
-    private void remove(String staffIdInput) {
+    private void remove(String vehicleIdInput) {
         try {
-            final long staffId = Long.parseLong(staffIdInput);
-            remove(staffId);
+            final long vehicleId = Long.parseLong(vehicleIdInput);
+            remove(vehicleId);
         } catch (NumberFormatException e) {
             System.err.println("Invalid vehicle id. Please try again.");
             remove();
         }
     }
 
-    private void remove(long staffId) {
-        vehicleRepository.delete(staffId);
+    private void remove(long vehicleId) {
+        vehicleRepository.delete(vehicleId);
     }
 
     private String readLine() {
