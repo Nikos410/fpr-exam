@@ -46,4 +46,11 @@ public interface Repository<T extends BaseEntity> {
      * @param updatedEntity The entity to update.
      */
     void update(T updatedEntity);
+
+    /**
+     * Delete a specific from this repository.
+     *
+     * @param id the id of the element to delete.
+     */
+    void delete(long id);
 }
