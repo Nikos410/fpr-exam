@@ -5,7 +5,7 @@ package de.nikos410.fpr.vehiclemanagement.model;
  *
  * Other entities should be based on this class.
  */
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Comparable<BaseEntity> {
     private long id;
 
     /**
@@ -45,5 +45,21 @@ public abstract class BaseEntity {
     @Override
     public final int hashCode() {
         return Long.hashCode(getId());
+    }
+
+    /**
+     * Compares this object with the specified object for order. Returns a negative integer, zero, or a positive
+     * integer as this object is less than, equal to, or greater than the specified object.
+     *
+     * Compares entities by their id.
+     *
+     * @param o the object to be compared.
+     * @return a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than
+     * the specified object.
+     * @see #getId()
+     */
+    @Override
+    public int compareTo(BaseEntity o) {
+        return Long.compare(getId(), o.getId());
     }
 }
