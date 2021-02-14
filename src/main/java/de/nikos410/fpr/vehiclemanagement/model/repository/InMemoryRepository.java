@@ -8,6 +8,11 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * A basic {@link Repository} implementation that keeps data in memory and does not persist anything.
+ *
+ * @param <T> the datatype contained in this repository.
+ */
 public abstract class InMemoryRepository<T extends BaseEntity> implements Repository<T> {
 
     protected final Set<T> content = new HashSet<>();
@@ -32,6 +37,11 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
         }
     }
 
+    /**
+     * This is a No-Op for this repository type, since no data is persisted.
+     *
+     * @param updatedEntity The entity to update.
+     */
     @Override
     public void update(T updatedEntity) {
         // No-Op
