@@ -110,11 +110,9 @@ public class VehicleManagementCLI implements AutoCloseable {
         final var modelNumber = readLine("Enter model number.");
         final var maximumSpeed = new BigDecimal(readLine("Enter maximum speed in kilometres per hour (km/h)."));
 
-        final var type = readLine("What type of vehicle do you want to add? [passenger-car | cargo-bike | cancel]");
+        final var type = readLine("What type of vehicle do you want to add? [passenger-car | cargo-bike]");
 
         switch (type) {
-            case "cancel" -> {
-            }
             case "passenger-car" -> addPassengerCar(id, modelNumber, maximumSpeed);
             case "cargo-bike" -> addCargoBicycle(id, modelNumber, maximumSpeed);
             default -> {
