@@ -58,9 +58,10 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     private void list() {
-        final String input = readLine("What should the vehicles be ordered by? [id | max-speed]");
+        final String input = readLine("What should the vehicles be ordered by? [id | max-speed | cancel]");
 
         switch (input) {
+            case "cancel" -> {}
             case "id" -> listOrderedById();
             case "max-speed" -> listOrderedByMaxSpeed();
             default -> {
