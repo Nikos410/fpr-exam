@@ -150,6 +150,8 @@ public class VehicleManagementCLI implements AutoCloseable {
                 add();
             }
         }
+
+        System.out.println("Successfully added vehicle.");
     }
 
     private void addPassengerCar(long id, String modelNumber, BigDecimal maximumSpeed) {
