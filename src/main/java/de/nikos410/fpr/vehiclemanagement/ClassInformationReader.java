@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 public class ClassInformationReader {
-    private static final String LINE_BREAK = "\n";
+    private static final String LINE_BREAK = String.format("%n");
     private static final int INDENT_DEPTH = 4;
     private static final String INDENT = " ".repeat(INDENT_DEPTH);
 
