@@ -23,15 +23,6 @@ public class PassengerCar extends Vehicle {
         return numberOfSeats;
     }
 
-    /**
-     * Sets the number of seats of this vehicle.
-     *
-     * @param numberOfSeats the number of seats of this vehicle.
-     */
-    public void setNumberOfSeats(int numberOfSeats) {
-        this.numberOfSeats = numberOfSeats;
-    }
-
     @Override
     public String toString() {
         return MessageFormat.format("PassengerCar'{'\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\nnumberOfSeats={3}\n}",

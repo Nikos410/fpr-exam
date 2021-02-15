@@ -23,15 +23,6 @@ public class ElectricPassengerCar extends PassengerCar {
         return maximumRange;
     }
 
-    /**
-     * Sets the maximum range of this car in kilometres (km).
-     *
-     * @param maximumRange the maximum range of this car in kilometres (km).
-     */
-    public void setMaximumRange(BigDecimal maximumRange) {
-        this.maximumRange = maximumRange;
-    }
-
     @Override
     public String toString() {
         return MessageFormat.format("ElectricPassengerCar'{'\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\nnumberOfSeats={3}\nmaximumRange={4}\n}",

@@ -22,15 +22,6 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     }
 
     /**
-     * Set the id that identifies this entity.
-     *
-     * @param id the id that identifies this entity.
-     */
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    /**
      * All concrete entities must override this and should include all their properties.
      *
      * @return a string representation of this entity.

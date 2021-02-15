@@ -23,15 +23,6 @@ public class CargoBicycle extends Vehicle {
         return cargoVolume;
     }
 
-    /**
-     * Sets the cargo volume of this bike in cubic metres (m^3).
-     *
-     * @param cargoVolume the cargo volume of this bike in cubic metres (m^3).
-     */
-    public void setCargoVolume(BigDecimal cargoVolume) {
-        this.cargoVolume = cargoVolume;
-    }
-
     @Override
     public String toString() {
         return MessageFormat.format("CargoBicycle'{'\nid={0}\nmodelNumber={1}\nmaximumSpeed={2}\ncargoVolume={3}\n}",

@@ -25,30 +25,12 @@ public abstract class Vehicle extends BaseEntity {
     }
 
     /**
-     * Sets the model number of this vehicle.
-     *
-     * @param modelNumber the model number of this vehicle.
-     */
-    public void setModelNumber(String modelNumber) {
-        this.modelNumber = modelNumber;
-    }
-
-    /**
      * Returns the maximum speed of this vehicle in kilometres per hour (km/h).
      *
      * @return the maximum speed of this vehicle in kilometres per hour (km/h).
      */
     public BigDecimal getMaximumSpeed() {
         return maximumSpeed;
-    }
-
-    /**
-     * Set the maximum speed of this vehicle in kilometres per hour (km/h).
-     *
-     * @param maximumSpeed the maximum speed of this vehicle in kilometres per hour (km/h).
-     */
-    public void setMaximumSpeed(BigDecimal maximumSpeed) {
-        this.maximumSpeed = maximumSpeed;
     }
 
     /**
