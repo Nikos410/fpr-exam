@@ -9,6 +9,14 @@ import java.text.MessageFormat;
 public class CargoBicycle extends Vehicle {
     private final BigDecimal cargoVolume;
 
+    /**
+     * Create a new instance using the given values.
+     *
+     * @param id the id that identifies this vehicle.
+     * @param modelNumber the model number of this vehicle.
+     * @param maximumSpeed the maximum speed of this vehicle in kilometres per hour (km/h).
+     * @param cargoVolume the cargo volume of this bike in cubic metres (m^3).
+     */
     public CargoBicycle(long id, String modelNumber, BigDecimal maximumSpeed, BigDecimal cargoVolume) {
         super(id, modelNumber, maximumSpeed);
         this.cargoVolume = cargoVolume;

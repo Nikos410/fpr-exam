@@ -9,6 +9,15 @@ import java.text.MessageFormat;
 public class ElectricPassengerCar extends PassengerCar {
     private final BigDecimal maximumRange;
 
+    /**
+     * Create a new instance using the given values.
+     *
+     * @param id the id that identifies this vehicle.
+     * @param modelNumber the model number of this vehicle.
+     * @param maximumSpeed the maximum speed of this vehicle in kilometres per hour (km/h).
+     * @param numberOfSeats the number of seats of this vehicle.
+     * @param maximumRange the maximum range of this car in kilometres (km).
+     */
     public ElectricPassengerCar(long id, String modelNumber, BigDecimal maximumSpeed, int numberOfSeats, BigDecimal maximumRange) {
         super(id, modelNumber, maximumSpeed, numberOfSeats);
         this.maximumRange = maximumRange;

@@ -9,6 +9,13 @@ public abstract class Vehicle extends BaseEntity {
     private final String modelNumber;
     private final BigDecimal maximumSpeed;
 
+    /**
+     * Create a new instance using the given values.
+     *
+     * @param id the id that identifies this vehicle.
+     * @param modelNumber the model number of this vehicle.
+     * @param maximumSpeed the maximum speed of this vehicle in kilometres per hour (km/h).
+     */
     protected Vehicle(long id, String modelNumber, BigDecimal maximumSpeed) {
         super(id);
         this.modelNumber = modelNumber;
