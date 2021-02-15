@@ -9,7 +9,8 @@ import java.util.stream.Collectors;
 
 public class ClassInformationReader {
     private static final String LINE_BREAK = "\n";
-    private static final String INDENT = "    ";
+    private static final int INDENT_DEPTH = 4;
+    private static final String INDENT = " ".repeat(INDENT_DEPTH);
 
     public static void main(String[] args) throws ClassNotFoundException {
         final Class<?> electricPassengerCarClass = Class.forName("de.nikos410.fpr.vehiclemanagement.model.ElectricPassengerCar");
