@@ -7,7 +7,7 @@ import java.text.MessageFormat;
  * An electric passenger car.
  */
 public class ElectricPassengerCar extends PassengerCar {
-    private BigDecimal maximumRange;
+    private final BigDecimal maximumRange;
 
     public ElectricPassengerCar(long id, String modelNumber, BigDecimal maximumSpeed, int numberOfSeats, BigDecimal maximumRange) {
         super(id, modelNumber, maximumSpeed, numberOfSeats);

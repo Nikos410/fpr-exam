@@ -6,8 +6,8 @@ import java.math.BigDecimal;
  * The base entity which all concrete vehicles should be based on.
  */
 public abstract class Vehicle extends BaseEntity {
-    private String modelNumber;
-    private BigDecimal maximumSpeed;
+    private final String modelNumber;
+    private final BigDecimal maximumSpeed;
 
     protected Vehicle(long id, String modelNumber, BigDecimal maximumSpeed) {
         super(id);

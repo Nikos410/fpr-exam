@@ -7,7 +7,7 @@ import java.text.MessageFormat;
  * A passenger car.
  */
 public class PassengerCar extends Vehicle {
-    private int numberOfSeats;
+    private final int numberOfSeats;
 
     public PassengerCar(long id, String modelNumber, BigDecimal maximumSpeed, int numberOfSeats) {
         super(id, modelNumber, maximumSpeed);

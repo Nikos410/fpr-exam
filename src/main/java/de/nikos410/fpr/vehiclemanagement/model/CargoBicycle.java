@@ -7,7 +7,7 @@ import java.text.MessageFormat;
  * A cargo bicycle.
  */
 public class CargoBicycle extends Vehicle {
-    private BigDecimal cargoVolume;
+    private final BigDecimal cargoVolume;
 
     public CargoBicycle(long id, String modelNumber, BigDecimal maximumSpeed, BigDecimal cargoVolume) {
         super(id, modelNumber, maximumSpeed);
