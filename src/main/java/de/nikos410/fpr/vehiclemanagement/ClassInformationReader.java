@@ -25,6 +25,7 @@ public class ClassInformationReader {
                 formatFields(theClass) +
                 LINE_BREAK +
                 formatMethods(theClass) +
+                LINE_BREAK +
                 formatClassFooter();
     }
 
