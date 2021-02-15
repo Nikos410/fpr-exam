@@ -19,7 +19,7 @@ public class ElectricPassengerCar extends PassengerCar {
      *
      * @return the maximum range of this car in kilometres (km).
      */
-    public BigDecimal getMaximumRange() {
+    protected BigDecimal getMaximumRange() {
         return maximumRange;
     }
 

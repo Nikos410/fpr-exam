@@ -19,7 +19,7 @@ public class PassengerCar extends Vehicle {
      *
      * @return the number of seats of this vehicle.
      */
-    public int getNumberOfSeats() {
+    protected int getNumberOfSeats() {
         return numberOfSeats;
     }
 

@@ -19,7 +19,7 @@ public class CargoBicycle extends Vehicle {
      *
      * @return the cargo volume of this bike in cubic metres (m^3).
      */
-    public BigDecimal getCargoVolume() {
+    protected BigDecimal getCargoVolume() {
         return cargoVolume;
     }
 
