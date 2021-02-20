@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 /**
- * Provides a standardized way of storing and accessing entities.
+ * Defines a standardized way of storing and accessing entities.
  *
  * @param <T> the datatype contained in this repository.
  */
