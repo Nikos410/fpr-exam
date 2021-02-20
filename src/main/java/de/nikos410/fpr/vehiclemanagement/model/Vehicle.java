@@ -3,7 +3,7 @@ package de.nikos410.fpr.vehiclemanagement.model;
 import java.math.BigDecimal;
 
 /**
- * The base entity which all concrete vehicles should be based on.
+ * The base entity for all concrete vehicles types.
  */
 public abstract class Vehicle extends BaseEntity {
     private final String modelNumber;
