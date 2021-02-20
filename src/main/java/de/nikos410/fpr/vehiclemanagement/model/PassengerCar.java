@@ -22,11 +22,6 @@ public class PassengerCar extends Vehicle {
         this.numberOfSeats = numberOfSeats;
     }
 
-    /**
-     * Returns the number of seats of this vehicle.
-     *
-     * @return the number of seats of this vehicle.
-     */
     protected int getNumberOfSeats() {
         return numberOfSeats;
     }
