@@ -22,11 +22,6 @@ public abstract class Vehicle extends BaseEntity {
         this.maximumSpeed = maximumSpeed;
     }
 
-    /**
-     * Returns the model number of this vehicle.
-     *
-     * @return the model number of this vehicle.
-     */
     public String getModelNumber() {
         return modelNumber;
     }
