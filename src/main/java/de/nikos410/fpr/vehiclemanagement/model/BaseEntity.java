@@ -35,6 +35,8 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     public abstract String toString();
 
     /**
+     * Indicates whether some other object is "equal to" this one.
+     *
      * Concrete entities should override this by comparing their id. This is not done here because this class can
      * be used as the base for many different things. For example, a person and a vehicle with the id 42 should not
      * be equal.
@@ -46,6 +48,8 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     public abstract boolean equals(Object obj);
 
     /**
+     * Returns a hash code value for the entity.
+     *
      * Implemented according to Effective Java - 3rd edition, item 11.
      *
      * @return the hash code value for this object.
