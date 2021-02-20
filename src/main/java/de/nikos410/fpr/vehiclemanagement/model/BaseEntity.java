@@ -29,8 +29,9 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     }
 
     /**
-     * All concrete entities must override this and should include all their properties.
+     * Returns a string representation of the entity.
      *
+     * @implSpec Concrete entities must implement this and should include all their properties.
      * @return a string representation of this entity.
      */
     @Override
@@ -38,11 +39,10 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
 
     /**
      * Indicates whether some other object is "equal to" this one.
-     * <br>
-     * Concrete entities should override this by comparing their id. This is not done here because this class can
-     * be used as the base for many different things. For example, a person and a vehicle with the id 42 should not
-     * be equal.
      *
+     * @implSpec Concrete entities should override this by comparing their id. This is not done here because this class
+     * can be used as the base for many different things. For example, a person and a vehicle with the id 42 should not
+     * be equal.
      * @param obj the reference object with which to compare.
      * @return true if this object has the same id as the obj argument; false otherwise.
      */
