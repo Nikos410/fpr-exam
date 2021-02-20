@@ -38,7 +38,9 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
     }
 
     /**
-     * This is a No-Op for this repository type, since no data is persisted.
+     * {@inheritDoc}
+     * <br>
+     * <strong>This is a No-Op for this repository type, since no data is persisted.</strong>
      *
      * @param updatedEntity The entity to update.
      */
