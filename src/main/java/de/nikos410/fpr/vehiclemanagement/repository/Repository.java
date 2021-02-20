@@ -30,7 +30,7 @@ public interface Repository<T extends BaseEntity> {
 
     /**
      * Adds a new element to this repository.
-     *
+     * <br>
      * The element must not be present in this repository already. If it is use {@link #update}
      *
      * @param newEntity the element to add to this repository.
@@ -40,7 +40,7 @@ public interface Repository<T extends BaseEntity> {
     /**
      * Updates the data described in this entity. For example, a database-based repository should persist the data to
      * the database.
-     *
+     * <br>
      * The element must be present in this repository already. If it isn't use {@link #add}
      *
      * @param updatedEntity The entity to update.
