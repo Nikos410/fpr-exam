@@ -3,9 +3,6 @@ package de.nikos410.fpr.vehiclemanagement.model;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 
-/**
- * An electric passenger car.
- */
 public class ElectricPassengerCar extends PassengerCar {
     private final BigDecimal maximumRange;
 

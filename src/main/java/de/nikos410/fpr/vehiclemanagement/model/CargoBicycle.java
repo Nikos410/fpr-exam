@@ -3,9 +3,6 @@ package de.nikos410.fpr.vehiclemanagement.model;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 
-/**
- * A cargo bicycle.
- */
 public class CargoBicycle extends Vehicle {
     private final BigDecimal cargoVolume;
 

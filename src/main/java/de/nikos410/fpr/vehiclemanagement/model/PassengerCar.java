@@ -3,9 +3,6 @@ package de.nikos410.fpr.vehiclemanagement.model;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 
-/**
- * A passenger car.
- */
 public class PassengerCar extends Vehicle {
     private final int numberOfSeats;
 
