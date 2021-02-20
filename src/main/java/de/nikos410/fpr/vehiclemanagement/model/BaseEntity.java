@@ -36,7 +36,7 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
 
     /**
      * Indicates whether some other object is "equal to" this one.
-     *
+     * <br>
      * Concrete entities should override this by comparing their id. This is not done here because this class can
      * be used as the base for many different things. For example, a person and a vehicle with the id 42 should not
      * be equal.
@@ -49,7 +49,7 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
 
     /**
      * Returns a hash code value for the entity.
-     *
+     * <br>
      * Implemented according to Effective Java - 3rd edition, item 11.
      *
      * @return the hash code value for this object.
@@ -62,7 +62,7 @@ public abstract class BaseEntity implements Comparable<BaseEntity> {
     /**
      * Compares this object with the specified object for order. Returns a negative integer, zero, or a positive
      * integer as this object is less than, equal to, or greater than the specified object.
-     *
+     * <br>
      * Compares entities by their id.
      *
      * @param o the object to be compared.
