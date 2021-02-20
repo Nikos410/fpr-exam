@@ -1,5 +1,7 @@
 package de.nikos410.fpr.vehiclemanagement;
 
+import de.nikos410.fpr.vehiclemanagement.model.ElectricPassengerCar;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -12,8 +14,8 @@ public class ClassInformationReader {
     private static final int INDENT_DEPTH = 4;
     private static final String INDENT = " ".repeat(INDENT_DEPTH);
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        final Class<?> electricPassengerCarClass = Class.forName("de.nikos410.fpr.vehiclemanagement.model.ElectricPassengerCar");
+    public static void main(String[] args) {
+        final Class<?> electricPassengerCarClass = ElectricPassengerCar.class;
         System.out.println(formatClassInformation(electricPassengerCarClass));
     }
 
