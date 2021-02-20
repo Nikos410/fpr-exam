@@ -21,6 +21,9 @@ public class VehicleManagementCLI implements AutoCloseable {
     private final BufferedReader bufferedStdInReader = new BufferedReader(new InputStreamReader(System.in));
     private final VehicleRepository vehicleRepository = new InMemoryVehicleRepository();
 
+    /**
+     * Run the CLI.
+     */
     public static void main(String[] args) throws IOException {
         try (final var vehicleManagementCLI = new VehicleManagementCLI()) {
             vehicleManagementCLI.run();
@@ -28,7 +31,7 @@ public class VehicleManagementCLI implements AutoCloseable {
     }
 
     /**
-     * Start the CLI.
+     * Run the CLI.
      */
     public void run() {
         boolean run;
@@ -215,6 +218,9 @@ public class VehicleManagementCLI implements AutoCloseable {
         }
     }
 
+    /**
+     *  Closes the underlying {@link BufferedReader} which is used for reading input from stdin.
+     */
     @Override
     public void close() throws IOException {
         bufferedStdInReader.close();
