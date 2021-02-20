@@ -23,7 +23,7 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
      * @return a {@link Set} containing all elements in this repository.
      */
     @Override
-    public Collection<T> findAll() {
+    public Set<T> findAll() {
         return content;
     }
 
