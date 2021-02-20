@@ -23,7 +23,8 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
      */
     @Override
     public Set<T> findAll() {
-        return content;
+        // Return new instance to prevent exposing the internal set.
+        return new HashSet<>(content);
     }
 
     @Override
