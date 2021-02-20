@@ -37,11 +37,10 @@ public abstract class Vehicle extends BaseEntity {
 
     /**
      * Indicates whether another vehicle is "equal to" this one. Vehicles are equal if they have the same id.
-     * <br>
-     * Implemented according to Effective Java - 3rd edition, item 10.
      *
      * @param obj the reference object with which to compare.
      * @return true if this object has the same id as the obj argument; false otherwise.
+     * @implNote Implemented according to Effective Java - 3rd edition, item 10.
      * @see BaseEntity
      * @see BaseEntity#getId()
      */
