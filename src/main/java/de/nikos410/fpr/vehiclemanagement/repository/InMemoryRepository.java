@@ -17,6 +17,11 @@ public abstract class InMemoryRepository<T extends BaseEntity> implements Reposi
 
     protected final Set<T> content = new HashSet<>();
 
+    /**
+     * {@inheritDoc}
+     *
+     * @return a {@link Set} containing all elements in this repository.
+     */
     @Override
     public Collection<T> findAll() {
         return content;
