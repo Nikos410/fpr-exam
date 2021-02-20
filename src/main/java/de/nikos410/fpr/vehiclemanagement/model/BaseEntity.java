@@ -2,8 +2,10 @@ package de.nikos410.fpr.vehiclemanagement.model;
 
 /**
  * A basic class which describes an entity that is identified by an id.
- *
  * Other entities should be based on this class.
+ * <br>
+ * <strong>IDs do not need to be unique among different entity types.</strong>
+ * For example, it is ok to create a person and a vehicle with the id 42 (See also: {@link #equals}).
  */
 public abstract class BaseEntity implements Comparable<BaseEntity> {
     private final long id;
